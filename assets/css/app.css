@@ -1,0 +1,23 @@
+#game_field {
+  display: inline-block;
+  width: 60%;
+  margin-left: 50px;
+  margin-top: 50px;
+}
+
+#game_info {
+  display: inline-block;
+  float: right;
+  margin-right: 100px;
+}
+
+.cell {
+  fill: #FFF;
+  stroke: #000;
+  stroke-width: 1.5px;
+}
+
+.cell-text {
+  alignment-baseline: middle;
+  text-anchor: middle;
+}

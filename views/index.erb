@@ -1,0 +1,29 @@
+<!DOCTYPE html >
+<html>
+  <body>
+      <meta charset="utf-8">
+      <title>Bomberman</title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width">
+
+      <%= stylesheet_tag 'app' %>
+
+      <div>
+        <div id="game_field">
+        </div>
+
+        <div id="game_info">
+          <h4>Controls:</h4>
+          <p><b>S</b> - start the game</p>
+          <p><b>B</b> - plant bomb</p>
+          <h4>Game field:</h4>
+          <p><b>B</b> - hard block</p>
+          <p><b>BS</b> - soft block</p>
+
+          <p>Bombs available: <span id="bombs_count"></span></p>
+        </div>
+      </div>
+
+      <%= javascript_tag 'app' %>
+  </body>
+</html>

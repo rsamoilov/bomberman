@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require './environment'
+
+EM.run do
+  Pry.start
+  EM.stop
+end

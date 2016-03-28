@@ -1,0 +1,2 @@
+#!/bin/bash
+RACK_ENV=development bundle exec thin start -R config.ru -p 9292
