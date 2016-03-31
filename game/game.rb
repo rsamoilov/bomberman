@@ -111,18 +111,14 @@ class Game
 
     updates = []
 
-    if @field.position(bomb.player) == [i, j] # player remains on the bomb
-      kill_player(bomb.player)
-      updates << [i, j]
-    end
-    
     @field.neighbors(i, j, radius: radius, include_self: true).each do |line|
       line.each do |i_chk, j_chk, cell|
 
-        if cell.is_a?(Bomb)
-          @field.remove(bomb)
+        if cell == bomb
+          kill_player(bomb.player) if @field.position(bomb.player) == [i_chk, j_chk]
+          @field.remove(cell)
           updates << [i_chk, j_chk]
-        elsif cell.is_a?(HardBlock)
+        elsif cell.is_a?(Bomb) || cell.is_a?(HardBlock)
           break
         elsif cell.is_a?(SoftBlock)
           @field.destroy(i_chk, j_chk)
