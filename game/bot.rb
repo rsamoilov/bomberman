@@ -1,4 +1,6 @@
 class Bot < Player
+  SPEED = 1.0 / 2 # 2 cells in 1 second
+
   def initialize(game)
     super
     @game_field = game.field
