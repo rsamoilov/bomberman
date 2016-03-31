@@ -2,11 +2,9 @@
 # implementation of backend-ui protocol
 #
 class Updater
-  UPDATES_PERIOD = 0.05
-
   def initialize(websocket)
     @websocket = websocket
-    init_buffer
+    @buffer = []
   end
 
   def send_field(game_field)
@@ -39,19 +37,14 @@ class Updater
 
   private
 
-  # bufferized updates
-  def init_buffer
-    @buffer = []
-
-    EM.add_periodic_timer(UPDATES_PERIOD) do
-      if @buffer.any?
+  def send(message)
+    if @buffer.empty?
+      EM.next_tick do
         @websocket.send @buffer.to_json
         @buffer = []
       end
     end
-  end
 
-  def send(message)
     @buffer << message
   end
 end
