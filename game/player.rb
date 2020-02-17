@@ -7,7 +7,7 @@ class Player < GameObject
 
   def start
     change_bombs_available(1)
-    @bombs_timer = EM::PeriodicTimer.new(30) { change_bombs_available(1) }
+    @bombs_timer = EM::PeriodicTimer.new(10) { change_bombs_available(1) }
   end
 
   def kill
