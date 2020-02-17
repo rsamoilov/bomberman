@@ -4,7 +4,7 @@ class @GameField
     @setupConnection()
 
   setupConnection: ->
-    uri = "ws://#{window.document.location.host}/"
+    uri = "wss://#{window.document.location.host}/"
     @ws = new WebSocket(uri)
 
     @ws.onmessage = (message) =>
