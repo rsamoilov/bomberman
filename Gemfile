@@ -1,11 +1,11 @@
 source 'http://rubygems.org'
 
-ruby '2.2.4'
+ruby '2.5.1'
 
 gem 'bundler', '>= 1.8.4'
 
-gem 'sinatra', '~> 1.4.7', require: 'sinatra/base'
-gem 'thin', '~> 1.6.4'
+gem 'sinatra', '~> 2.0', require: 'sinatra/base'
+gem 'thin', '~> 1.0'
 gem 'faye-websocket', '~> 0.10.3'
 
 gem 'sinatra-asset-pipeline', require: 'sinatra/asset_pipeline'

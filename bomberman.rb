@@ -3,6 +3,7 @@ require 'sinatra/reloader' if ENV['RACK_ENV'] == 'development'
 class Bomberman < Sinatra::Base
   configure do
     set :assets_js_compressor, :uglifier
+    set :assets_paths, %w(assets assets/css assets/js)
     register Sinatra::AssetPipeline
 
     if defined?(RailsAssets)

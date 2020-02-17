@@ -1,5 +1,5 @@
 #= require d3
-#= require game_field
+#= require ./game_field
 
 gameField = new GameField()
 
